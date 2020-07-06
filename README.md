@@ -26,7 +26,7 @@ pip install pyaudio
 - Any question related to deaths **or** cases with the name of any country **OR** 'total' deaths **or** cases : Returns the required number as speech. <br>
 - **"stop"**: Stops the execution of the program. <br>
 # Examples
-"How many cases are there in China?"
-"How many total deaths worldwide?"
+"How many cases are there in China?"<br>
+"How many total deaths worldwide?"<br>
 "Hoe many deaths are there in USA?"
 
