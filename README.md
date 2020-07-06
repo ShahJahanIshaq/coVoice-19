@@ -3,3 +3,7 @@ covid_voice is a simple voice assistant tracker of COVID-19 deaths and cases of 
 To set up:
 # Installation of libraries
 You'll need Python 3 installed with pip. Run:
+```
+pip install pyttsx3
+pip install pywin32
+```
