@@ -1,5 +1,5 @@
-# covidVoice
-covidVoice is a simple voice assistant tracker of COVID-19 deaths and cases of each country that uses speech recognition and regex search patterns, along with basic web scraping techniques. Also, it updates the data with a single command.
+# coVoice-19
+coVoice-19 is a simple voice assistant tracker of COVID-19 deaths and cases of each country that uses speech recognition and regex search patterns, along with basic web scraping techniques. Also, it updates the data with a single command.
 To set up:
 # Installation of libraries
 You'll need Python 3 installed with pip. Run:
