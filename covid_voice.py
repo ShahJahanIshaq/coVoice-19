@@ -59,14 +59,19 @@ class Data:
         def poll():
             time.sleep(0.1)
             old_data = self.data
+            print(old_data)
+            slept = False
             while True:
                 new_data = self.get_data()
-                if new_data != old_data:
+                print(new_data)
+                if new_data != old_data or slept == True:
                     self.data = new_data
                     print("Data updated")
                     speak("Data Updated")
                     break
-                time.sleep(5)
+                else:
+                    time.sleep(5)
+                    slept = True
 
         t = threading.Thread(target = poll)
         t.start()
@@ -99,9 +104,11 @@ def main():
                     re.compile("[\w\s]+ total cases"):data.get_total_cases,
                     re.compile("[\w\s]+ total [\w\s]+ deaths"):data.get_total_deaths,
                     re.compile("[\w\s]+ total deaths"):data.get_total_deaths,
+                    re.compile("[\w\s]+ deaths [\w\s]+ world [\w\s]+"):data.get_total_deaths,
+                    re.compile("[\w\s]+ cases [\w\s]+ world [\w\s]+"):data.get_total_cases
                     }
     COUNTRY_PATTERNS = {
-                    re.compile("[\w\s]+ cases [\w\s]+"): lambda country: data.get_country_data(country)['total_cases'],
+                    re.compile("[^\n]+ cases [^\n]+"): lambda country: data.get_country_data(country)['total_cases'],
                     re.compile("[\w\s]+ deaths [\w\s]+"): lambda country: data.get_country_data(country)['total_deaths']
                     }
     UPDATE_COMMAND = "update"
